@@ -1,0 +1,237 @@
+/* +++++++++++++++++++++++++++++++++++++++++   RESPONSIVE:  200-767px ++++++++++++++++++++++++++++++ */
+@media only screen and (min-width: 200px) and (max-width: 767px) {
+
+
+    .grid-container-galeria {
+        background-color: white;
+        width: 100%;
+        min-height: 100vh;
+        display: grid;
+        margin-top: 0px;
+        grid-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+            'header			header   	header'
+            'img-container		img-container 	img-container'
+            'img-container		img-container 	img-container'
+            'footer	 		footer 		footer';
+    }
+
+
+    .img-container {
+
+        grid-area: img-container;
+        color: white;
+        background-color: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        font-size: 18px;
+        line-height: 25px;
+        height: fit-content;
+        gap: 10px;
+        margin-top: 50px;
+        margin-left: 2%;
+        margin-right: 2%;
+        grid-template-areas:
+            'item1 item1'
+            'item2 item3'
+            'item2 item4'
+            'item5 item6'
+            'item7 item6'
+            'item8 item8'
+            'item9 item9';
+
+
+    }
+
+    .item {
+        min-height: 100px;
+        min-width: 100px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .item:hover {
+        transform: scale(1.05);
+    }
+
+    .item1 {
+        background-image: url(../img/item1.jpg);
+        background-size: cover;
+        grid-area: item1;
+        min-height: 200px;
+        background-position-y: 40%;
+    }
+
+    .item2 {
+        background-image: url(../img/item2.jpg);
+        background-size: cover;
+        grid-area: item2;
+    }
+
+    .item3 {
+        background-image: url(../img/item3.jpg);
+        background-size: cover;
+        grid-area: item3;
+    }
+
+    .item4 {
+        background-image: url(../img/item4.jpg);
+        background-size: cover;
+        grid-area: item4;
+        background-position-y: 50%;
+    }
+
+    .item5 {
+        background-image: url(../img/item5.jpg);
+        background-size: cover;
+        grid-area: item5;
+        background-position-y: 50%;
+    }
+
+    .item6 {
+        background-image: url(../img/item6.jpg);
+        background-size: cover;
+        grid-area: item6;
+        background-position-y: 50%;
+    }
+
+    .item7 {
+        background-image: url(../img/item7.jpg);
+        background-size: cover;
+        grid-area: item7;
+        background-position-y: 40%;
+    }
+
+    .item8 {
+        background-image: url(../img/item8.jpg);
+        background-size: cover;
+        grid-area: item8;
+        background-position-y: 20%;
+    }
+
+    .item9 {
+        background-image: url(../img/item9.jpg);
+        background-size: cover;
+        grid-area: item9;
+        min-height: 300px;
+        background-position-y: 50%;
+    }
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++   RESPONSIVE: +768x ++++++++++++++++++++++++++++++ */
+@media only screen and (min-width: 768px) {
+
+    .grid-container-galeria {
+        background-color: white;
+        width: 100%;
+        min-height: 100vh;
+        margin: auto;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+            'header			header   	header'
+            'img-container		img-container 	img-container'
+            'img-container		img-container 	img-container'
+            'footer	 		footer 		footer';
+    }
+
+
+    .img-container {
+
+        grid-area: img-container;
+        color: white;
+        background-color: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        font-size: 18px;
+        line-height: 25px;
+        height: fit-content;
+        gap: 10px;
+        margin-top: 90px;
+        grid-template-areas:
+            'item1 item1 item1'
+            'item2 item3 item4'
+            'item2 item5 item6'
+            'item7 item8 item6'
+            'item9 item9 item9';
+
+
+    }
+
+    .item {
+        min-height: 200px;
+        min-width: 200px;
+        transition: transform 0.8s ease-in-out;
+        overflow: hidden;
+    }
+
+    .item:hover {
+        transform: scale(1.05);
+        overflow: hidden;
+    }
+
+    .item1 {
+        background-image: url(../img/item1.jpg);
+        background-size: cover;
+        grid-area: item1;
+        min-height: 300px;
+        background-position-y: 40%;
+    }
+
+    .item2 {
+        background-image: url(../img/item2.jpg);
+        background-size: cover;
+        grid-area: item2;
+    }
+
+    .item3 {
+        background-image: url(../img/item3.jpg);
+        background-size: cover;
+        grid-area: item3;
+        background-position-y: 30%;
+    }
+
+    .item4 {
+        background-image: url(../img/item4.jpg);
+        background-size:cover;
+        grid-area: item4;
+        background-position-y: 60%;
+    }
+
+    .item5 {
+        background-image: url(../img/item5.jpg);
+        background-size: cover;
+        grid-area: item5;
+    }
+
+    .item6 {
+        background-image: url(../img/item6.jpg);
+        background-size: cover;
+        grid-area: item6;
+    }
+
+    .item7 {
+        background-image: url(../img/item7.jpg);
+        background-size: cover;
+        grid-area: item7;
+    }
+
+    .item8 {
+        background-image: url(../img/item8.jpg);
+        background-size: cover;
+        grid-area: item8;
+    }
+
+    .item9 {
+        background-image: url(../img/item9.jpg);
+        background-size: cover;
+        grid-area: item9;
+        min-height: 500px;
+        background-position-y: 50%;
+    }
+}

@@ -1,0 +1,155 @@
+/* +++++++++++++++++++++++++++++++++++++++++   RESPONSIVE:  200-767px ++++++++++++++++++++++++++++++ */
+@media only screen and (min-width: 200px) and (max-width: 767px) {
+
+    .contenedor-contacto {
+        background-color: rgb(236, 236, 236);
+        width: 100%;
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+            'header			header   	header'
+            'form-container		form-container 	form-container'
+            'form-container		form-container	form-container'
+            'footer	 		footer 		footer';
+    }
+
+    .form-container {
+        margin-top: 60px;
+        height: fit-content;
+        width: 100vw;
+        display: grid;
+        grid-area: form-container;
+        color:blanchedalmond;
+    }
+    .form-input{
+        display: flex;
+        flex-direction: column;
+        margin: 30px;
+    }
+
+    .titulo-contacto {
+        margin-top: 10px;
+        margin-bottom: 30px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        font-size: 30px;
+    }
+    .subtitulo-contacto{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    .selector-sexo{
+        z-index: 2;
+    }
+
+    .titulo-termycond {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        height: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+    }
+    .texto-termycond{
+        justify-content: center;
+        text-align: justify;
+        margin: 30px;
+
+    }
+    .checkaceptoterm{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-top: 40px;
+    }
+    .boton-enviar {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+}
+/* +++++++++++++++++++++++++++++++++++++++++   RESPONSIVE: +768px++++++++++++++++++++++++++++++ */
+@media only screen and (min-width: 768px) {
+    .contenedor-contacto {
+        background-color: rgb(236, 236, 236);
+        width: 98.6vw;
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+            'header			header   	header'
+            'form-container		form-container 	form-container'
+            'form-container		form-container	form-container'
+            'footer	 		footer 		footer';
+    }
+
+    .form-container {
+        height: fit-content;
+        width: 80%;
+        display: grid;
+        grid-area: form-container;
+        color:blanchedalmond;
+        box-shadow: 15px 10px 15px rgb(119, 115, 115);
+        margin: auto;
+        margin-top: 102px;
+        margin-bottom: 50px;
+    
+    }
+
+    .titulo-contacto {
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        color: black;
+        background-color: rgb(255, 255, 255);
+        margin-bottom: 10px;
+
+
+    }
+    .selector-sexo{
+        z-index: 2;
+        margin-bottom: 20px;
+    }
+
+    .titulo-termycond {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .texto-termycond{
+        justify-content: center;
+        text-align: justify;
+        margin: 30px;
+
+    }
+        
+
+
+    
+    .checkaceptoterm{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    .boton-enviar {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        
+    }
+
+
+}
