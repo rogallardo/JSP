@@ -435,12 +435,36 @@ a {
     }
   }
   .destacado div h3 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 300px;
+    height: fit-content;
+    font-weight: 600;
+    justify-content: center;
+    text-align: center;
+    font-size: 42px;
+    animation-name: showdelay;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    display: flex;
     padding-bottom: 30px;
     width: fit-content;
     font-size: 18px;
     font-weight: 600;
   }
   .destacado div a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 300px;
+    height: fit-content;
+    font-weight: 600;
+    justify-content: center;
+    text-align: center;
+    font-size: 42px;
+    animation-name: showdelay;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    display: flex;
     padding: 10px;
     width: fit-content;
     font-size: 18px;
@@ -1179,7 +1203,7 @@ a {
   justify-content: center;
   align-items: center;
   display: flex;
-  transition: 0.2s;
+  transition: 0.1s;
   backdrop-filter: brightness(40%);
   background-size: cover;
 }

@@ -537,7 +537,18 @@ $paleta_sidebar: ('color1': black,
 			}
 
 			h3 {
-				@extend h2;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				width: 300px;
+				height: fit-content;
+				font-weight: 600;
+				justify-content: center;
+				text-align: center;
+				font-size: 42px;
+				animation-name: showdelay;
+				animation-duration: 4s;
+				animation-fill-mode: forwards;
+				display: flex;
 				padding-bottom: 30px;
 				width: fit-content;
 				font-size: 18px;
@@ -546,7 +557,18 @@ $paleta_sidebar: ('color1': black,
 			}
 
 			a {
-				@extend h2;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				width: 300px;
+				height: fit-content;
+				font-weight: 600;
+				justify-content: center;
+				text-align: center;
+				font-size: 42px;
+				animation-name: showdelay;
+				animation-duration: 4s;
+				animation-fill-mode: forwards;
+				display: flex;
 				padding: 10px;
 				width: fit-content;
 				font-size: 18px;
