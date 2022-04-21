@@ -1113,7 +1113,7 @@ a {
   grid-area: categorias-productos-container;
 }
 
-.productos-container {
+#productos-container {
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -1127,7 +1127,6 @@ a {
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 2%;
-  grid-template-areas: "item-prod1 item-prod2 item-prod3" "item-prod4 item-prod5 item-prod6" "item-prod7 item-prod8 item-prod9" "item-prod10 item-prod11 item-prod12";
 }
 
 .btn-prod {
@@ -1142,6 +1141,7 @@ a {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  margin-bottom: 5px;
 }
 .btn-prod:hover {
   background-color: white;
@@ -1271,22 +1271,27 @@ a {
 }
 
 .item-prod {
-  height: 500px;
+  height: 550px;
   width: 350px;
   font-size: 60px;
   text-decoration: none;
   box-shadow: 5px 0px 10px #9b9b9b;
-  justify-content: center;
-  align-items: flex-start;
   display: flex;
   flex-direction: column;
 }
 .item-prod .item-img-container {
   height: 70%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0%;
+}
+.item-prod .item-img-container .item-img {
+  height: 100%;
+  width: 100%;
   background-size: cover;
   display: flex;
-  flex-direction: column-reverse;
+  margin-top: 0%;
 }
 .item-prod .item-desc-container {
   height: 30%;
@@ -1313,342 +1318,6 @@ a {
   font-size: 18px;
   color: black;
   text-align: center;
-}
-
-.item-MTB-prod1 {
-  grid-area: item-prod1;
-}
-.item-MTB-prod1 .item-img-container {
-  background-image: url(../img/prod2.jpg);
-}
-
-.item-MTB-prod2 {
-  grid-area: item-prod2;
-}
-.item-MTB-prod2 .item-img-container {
-  background-image: url(../img/prod1.jpg);
-}
-
-.item-MTB-prod3 {
-  grid-area: item-prod3;
-}
-.item-MTB-prod3 .item-img-container {
-  background-image: url(../img/prod3.jpg);
-}
-
-.item-MTB-prod4 {
-  grid-area: item-prod4;
-}
-.item-MTB-prod4 .item-img-container {
-  background-image: url(../img/prod2.jpg);
-}
-
-.item-MTB-prod5 {
-  grid-area: item-prod5;
-}
-.item-MTB-prod5 .item-img-container {
-  background-image: url(../img/prod2.jpg);
-}
-
-.item-MTB-prod6 {
-  grid-area: item-prod6;
-}
-.item-MTB-prod6 .item-img-container {
-  background-image: url(../img/prod1.jpg);
-}
-
-.item-MTB-prod7 {
-  grid-area: item-prod7;
-}
-.item-MTB-prod7 .item-img-container {
-  background-image: url(../img/prod3.jpg);
-}
-
-.item-MTB-prod8 {
-  grid-area: item-prod8;
-}
-.item-MTB-prod8 .item-img-container {
-  background-image: url(../img/prod2.jpg);
-}
-
-.item-MTB-prod9 {
-  grid-area: item-prod9;
-}
-.item-MTB-prod9 .item-img-container {
-  background-image: url(../img/prod3.jpg);
-}
-
-.item-MTB-prod10 {
-  grid-area: item-prod10;
-}
-.item-MTB-prod10 .item-img-container {
-  background-image: url(../img/prod1.jpg);
-}
-
-.item-MTB-prod11 {
-  grid-area: item-prod11;
-}
-.item-MTB-prod11 .item-img-container {
-  background-image: url(../img/prod2.jpg);
-}
-
-.item-MTB-prod12 {
-  grid-area: item-prod12;
-}
-.item-MTB-prod12 .item-img-container {
-  background-image: url(../img/prod3.jpg);
-}
-
-.item-repuestos-prod1 {
-  grid-area: item-prod1;
-}
-.item-repuestos-prod1 .item-img-container {
-  background-image: url(../img/rep1.jpg);
-}
-
-.item-repuestos-prod2 {
-  grid-area: item-prod2;
-}
-.item-repuestos-prod2 .item-img-container {
-  background-image: url(../img/rep2.jpg);
-}
-
-.item-repuestos-prod3 {
-  grid-area: item-prod3;
-}
-.item-repuestos-prod3 .item-img-container {
-  background-image: url(../img/rep3.jpg);
-}
-
-.item-repuestos-prod4 {
-  grid-area: item-prod4;
-}
-.item-repuestos-prod4 .item-img-container {
-  background-image: url(../img/rep2.jpg);
-}
-
-.item-repuestos-prod5 {
-  grid-area: item-prod5;
-}
-.item-repuestos-prod5 .item-img-container {
-  background-image: url(../img/rep3.jpg);
-}
-
-.item-repuestos-prod6 {
-  grid-area: item-prod6;
-}
-.item-repuestos-prod6 .item-img-container {
-  background-image: url(../img/rep1.jpg);
-}
-
-.item-repuestos-prod7 {
-  grid-area: item-prod7;
-}
-.item-repuestos-prod7 .item-img-container {
-  background-image: url(../img/rep3.jpg);
-}
-
-.item-repuestos-prod8 {
-  grid-area: item-prod8;
-}
-.item-repuestos-prod8 .item-img-container {
-  background-image: url(../img/rep1.jpg);
-}
-
-.item-repuestos-prod9 {
-  grid-area: item-prod9;
-}
-.item-repuestos-prod9 .item-img-container {
-  background-image: url(../img/rep2.jpg);
-}
-
-.item-repuestos-prod10 {
-  grid-area: item-prod10;
-}
-.item-repuestos-prod10 .item-img-container {
-  background-image: url(../img/rep2.jpg);
-}
-
-.item-repuestos-prod11 {
-  grid-area: item-prod11;
-}
-.item-repuestos-prod11 .item-img-container {
-  background-image: url(../img/rep1.jpg);
-}
-
-.item-repuestos-prod12 {
-  grid-area: item-prod12;
-}
-.item-repuestos-prod12 .item-img-container {
-  background-image: url(../img/rep3.jpg);
-}
-
-.item-accesorios-prod1 {
-  grid-area: item-prod1;
-}
-.item-accesorios-prod1 .item-img-container {
-  background-image: url(../img/acc1.jpg);
-}
-
-.item-accesorios-prod2 {
-  grid-area: item-prod2;
-}
-.item-accesorios-prod2 .item-img-container {
-  background-image: url(../img/acc2.jpg);
-}
-
-.item-accesorios-prod3 {
-  grid-area: item-prod3;
-}
-.item-accesorios-prod3 .item-img-container {
-  background-image: url(../img/acc3.jpg);
-}
-
-.item-accesorios-prod4 {
-  grid-area: item-prod4;
-}
-.item-accesorios-prod4 .item-img-container {
-  background-image: url(../img/acc2.jpg);
-}
-
-.item-accesorios-prod5 {
-  grid-area: item-prod5;
-}
-.item-accesorios-prod5 .item-img-container {
-  background-image: url(../img/acc3.jpg);
-}
-
-.item-accesorios-prod6 {
-  grid-area: item-prod6;
-}
-.item-accesorios-prod6 .item-img-container {
-  background-image: url(../img/acc1.jpg);
-}
-
-.item-accesorios-prod7 {
-  grid-area: item-prod7;
-}
-.item-accesorios-prod7 .item-img-container {
-  background-image: url(../img/acc3.jpg);
-}
-
-.item-accesorios-prod8 {
-  grid-area: item-prod8;
-}
-.item-accesorios-prod8 .item-img-container {
-  background-image: url(../img/acc1.jpg);
-}
-
-.item-accesorios-prod9 {
-  grid-area: item-prod9;
-}
-.item-accesorios-prod9 .item-img-container {
-  background-image: url(../img/acc2.jpg);
-}
-
-.item-accesorios-prod10 {
-  grid-area: item-prod10;
-}
-.item-accesorios-prod10 .item-img-container {
-  background-image: url(../img/acc2.jpg);
-}
-
-.item-accesorios-prod11 {
-  grid-area: item-prod11;
-}
-.item-accesorios-prod11 .item-img-container {
-  background-image: url(../img/acc1.jpg);
-}
-
-.item-accesorios-prod12 {
-  grid-area: item-prod12;
-}
-.item-accesorios-prod12 .item-img-container {
-  background-image: url(../img/acc3.jpg);
-}
-
-.item-indumentaria-prod1 {
-  grid-area: item-prod1;
-}
-.item-indumentaria-prod1 .item-img-container {
-  background-image: url(../img/ind1.jpg);
-}
-
-.item-indumentaria-prod2 {
-  grid-area: item-prod2;
-}
-.item-indumentaria-prod2 .item-img-container {
-  background-image: url(../img/ind2.jpg);
-}
-
-.item-indumentaria-prod3 {
-  grid-area: item-prod3;
-}
-.item-indumentaria-prod3 .item-img-container {
-  background-image: url(../img/ind3.jpg);
-}
-
-.item-indumentaria-prod4 {
-  grid-area: item-prod4;
-}
-.item-indumentaria-prod4 .item-img-container {
-  background-image: url(../img/ind2.jpg);
-}
-
-.item-indumentaria-prod5 {
-  grid-area: item-prod5;
-}
-.item-indumentaria-prod5 .item-img-container {
-  background-image: url(../img/ind3.jpg);
-}
-
-.item-indumentaria-prod6 {
-  grid-area: item-prod6;
-}
-.item-indumentaria-prod6 .item-img-container {
-  background-image: url(../img/ind1.jpg);
-}
-
-.item-indumentaria-prod7 {
-  grid-area: item-prod7;
-}
-.item-indumentaria-prod7 .item-img-container {
-  background-image: url(../img/ind3.jpg);
-}
-
-.item-indumentaria-prod8 {
-  grid-area: item-prod8;
-}
-.item-indumentaria-prod8 .item-img-container {
-  background-image: url(../img/ind1.jpg);
-}
-
-.item-indumentaria-prod9 {
-  grid-area: item-prod9;
-}
-.item-indumentaria-prod9 .item-img-container {
-  background-image: url(../img/ind2.jpg);
-}
-
-.item-indumentaria-prod10 {
-  grid-area: item-prod10;
-}
-.item-indumentaria-prod10 .item-img-container {
-  background-image: url(../img/ind2.jpg);
-}
-
-.item-indumentaria-prod11 {
-  grid-area: item-prod11;
-}
-.item-indumentaria-prod11 .item-img-container {
-  background-image: url(../img/ind1.jpg);
-}
-
-.item-indumentaria-prod12 {
-  grid-area: item-prod12;
-}
-.item-indumentaria-prod12 .item-img-container {
-  background-image: url(../img/ind3.jpg);
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++   RESPONSIVE:  200-760px ++++++++++++++++++++++++++++++ */
