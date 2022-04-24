@@ -30,12 +30,7 @@ const bicis =[bici1,bici2,bici3,bici4, bici5,bici6];
 const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 datosCarrito()
 
-//Aca voy a empezar a mostrar mis bicis en el html
 
-//1- Seleccionar el tag HTML a donde voy a insertarle cada uno de mis bicis.
-
-//2- Recorrer el array de robots y luego empezar a jugar, estar atentos a los comentarios dentro del recorrido que voy haciendo
-// uso for of, pueden usar el clásico for si quieren es lo mismo
 generadorDeCards(bicis)
 function generadorDeCards(bicis) {
     const clase= document.getElementById('productos-container')
@@ -50,7 +45,7 @@ function generadorDeCards(bicis) {
         contenedor.innerHTML=`
                         <div id="MTB" class="item-prod ">
                         <div class="item-img-container">
-                            <img class= "item-img" src="./img/prod${bici.id}.jpg" class="card-img-top" alt=
+                            <img class= "item-img" src="/img/prod${bici.id}.jpg" class="card-img-top" alt=
                        
                         </div>
                         <div class="item-desc-container">
@@ -76,16 +71,37 @@ function generadorDeCards(bicis) {
 // 5- Una vez hecho todo el proceso, procedemos a calcular el total de los productos que contiene el carrito.
 // Esto lo hago recorriendo el array de carrito, revisando uno por uno mis productos y su respectiva cantidad.
 // let producto;
-let totalProductos;
-let i;
+const mostrarCardsCarrito = (cards) => document.getElementById("carrito").innerHTML = cards;
+generarCardsEnCarrito(carrito)
+function generarCardsEnCarrito(carrito) {
+    let acumuladorDeCards = ''
+    carrito.forEach((bici) => {
+        acumuladorDeCards +=`
+                        <div>
+                        <div id="MTB" class="item-prod ">
+                        <div class="item-img-container">
+                            <img class= "item-img" src="/img/prod${bici.id}.jpg" class="card-img-top" alt=
+                        </div>
+                        <div class="item-desc-container">
+                        <a onclick="eliminar(${bici.id})" class="btn-prod" >Eliminar</a>
+                            <h4 class="card-title">${bici.modelo}</h4>
+                            <h5>${bici.equipamiento}</h5>
+                            <h6>$${bici.precio}</h6>
+                            <a id= "cantidad" class="btn-prod2">Cantidad : ${bici.cantidad} </a>
+                        </div>
+                    </div>
+                    </div>`
+                    
+                    
+    })
+    
+    mostrarCardsCarrito(acumuladorDeCards)
+    
+}
 
 
 function cantidadTotalCarrito (){
     
-    
-    // for(let i=0; i<carrito.length;i++){
-    //     totalProductos += carrito[i].cantidad;
-    // }
     const totalProductos = carrito.reduce((acc, caca) => (acc + caca.cantidad), 0)
     document.getElementById('cantidad-carrito').innerHTML = totalProductos
 }
@@ -100,34 +116,7 @@ function datosCarrito() {
     precioTotal()
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
-const mostrarCardsCarrito = (cards) => document.getElementById("carrito").innerHTML = cards;
-generarCardsEnCarrito(carrito)
-function generarCardsEnCarrito(carrito) {
-    let acumuladorDeCards = ''
-    carrito.forEach((bici) => {
-        acumuladorDeCards +=`
-                        <div>
-                        <div id="MTB" class="item-prod ">
-                        <div class="item-img-container">
-                            <img class= "item-img" src="./img/prod${bici.id}.jpg" class="card-img-top" alt=
-                       
-                        </div>
-                        <div class="item-desc-container">
-                        <a onclick="eliminar(${bici.id})" class="btn-prod" >Eliminar</a>
-                            <h4 class="card-title">${bici.modelo}</h4>
-                            <h5>${bici.equipamiento}</h5>
-                            <h6>$${bici.precio}</h6>
-                            <a id= "agregarAlCarrito${bici.id}" class="btn-prod2">+ Agregar al carrito </a>
-                        </div>
-                    </div>
-                    </div>`
-                    
-                    
-    })
-    
-    mostrarCardsCarrito(acumuladorDeCards)
-    
-}
+
 
 function agregarAlCarrito(idProducto){
     const productoAgregado = bicis.find(el => el.id === idProducto)
