@@ -48,17 +48,22 @@ function generadorDeCards(bicis) {
                             <img class= "item-img" src="/img/prod${bici.id}.jpg" class="card-img-top" alt=
                        
                         </div>
-                        <div class="item-desc-container">
+                        <div id= "item-desc-container" class="item-desc-container">
                         <a  class="btn-prod" >VER PRODUCTO</a>
                             <h4 class="card-title">${bici.modelo}</h4>
                             <h5>${bici.equipamiento}</h5>
                             <h6>$${bici.precio}</h6>
                             <a id= "agregarAlCarrito${bici.id}" class="btn-prod2">+ Agregar al carrito </a>
-                        </div>
+                        </div> 
                     </div>`
         // Luego le agrego al div grandote que declaramos primero que este div va a ser su hijo!
         clase.append(contenedor)
-        document.getElementById(`agregarAlCarrito${bici.id}`).addEventListener('click', () => agregarAlCarrito(bici.id))
+        document.getElementById(`agregarAlCarrito${bici.id}`).addEventListener('click', () => {
+            agregarAlCarrito(bici.id)
+        const btnAgregarCarrito = document.getElementById(`agregarAlCarrito${bici.id}`);
+        btnAgregarCarrito.innerHTML = `Agregado`
+        btnAgregarCarrito.className = "btn-prod3"
+        })
         
     }
 }
@@ -70,7 +75,7 @@ function generadorDeCards(bicis) {
 // 4- Si no existe, voy a pushear por primera vez mi producto
 // 5- Una vez hecho todo el proceso, procedemos a calcular el total de los productos que contiene el carrito.
 // Esto lo hago recorriendo el array de carrito, revisando uno por uno mis productos y su respectiva cantidad.
-// let producto;
+
 const mostrarCardsCarrito = (cards) => document.getElementById("carrito").innerHTML = cards;
 generarCardsEnCarrito(carrito)
 function generarCardsEnCarrito(carrito) {
@@ -87,22 +92,33 @@ function generarCardsEnCarrito(carrito) {
                             <h4 class="card-title">${bici.modelo}</h4>
                             <h5>${bici.equipamiento}</h5>
                             <h6>$${bici.precio}</h6>
-                            <a id= "cantidad" class="btn-prod2">Cantidad : ${bici.cantidad} </a>
+                            <div class="cantidad-container">
+                                
+                                <a id= "cantidad-${bici.id}" class="btn-cant">-</a>
+                                <a  id="contadorCant" class="cant">  </a>
+                                <a onclick="aumentCant(${bici.id})"  class ="btn-cant">+ </a>
+                                
+
+                            
+                            </div>
+                            
                         </div>
                     </div>
                     </div>`
-                    
-                    
-    })
-    
+     
+ 
+ }) 
+  
     mostrarCardsCarrito(acumuladorDeCards)
-    
 }
-
-
-function cantidadTotalCarrito (){
     
-    const totalProductos = carrito.reduce((acc, caca) => (acc + caca.cantidad), 0)
+function cantidadDelProducto (){
+    const cantTotalProducto = carrito.reduce((acc, producto) => (acc + producto.cantidad), 0)
+    document.getElementById('contadorCant').innerHTML= cantTotalProducto
+}    
+
+function cantidadTotalCarrito (){  
+    const totalProductos = carrito.reduce((acc, producto) => (acc + producto.cantidad), 0)
     document.getElementById('cantidad-carrito').innerHTML = totalProductos
 }
 
@@ -114,6 +130,7 @@ function precioTotal() {
 function datosCarrito() {
     cantidadTotalCarrito()
     precioTotal()
+    
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 
@@ -125,16 +142,13 @@ function agregarAlCarrito(idProducto){
             carrito.push(productoAgregado);
             productoAgregado.stock--;
             productoAgregado.cantidad++; 
-            datosCarrito()
             generarCardsEnCarrito(carrito)
-    } else if ((productoAgregado.stock > 0) && (productoEnCarrito.id === productoAgregado.id)) {
-        productoAgregado.cantidad++;
-        productoAgregado.stock--;
-        datosCarrito()
-    } else if (productoAgregado.stock === 0){
-        noHayStock()
+    
     }
+    datosCarrito()    
 }
+
+
 
 function eliminar(idProducto){
     const productoAEliminar = carrito.find(el=> el.id === idProducto)
@@ -153,5 +167,20 @@ function noHayStock() {
         button: "Ok",
       });
 }
+function aumentCant(idProducto){
+    
+             
+    const productoAAumentar= carrito.find(el => el.id === idProducto)
+    
+    if(productoAAumentar.stock == 0){
+        noHayStock()
+        
+    }else{
+    productoAAumentar.cantidad++;
+    productoAAumentar.stock--;
+    cantidadDelProducto()
+    }
+    datosCarrito()
 
+}
 

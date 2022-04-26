@@ -1108,6 +1108,12 @@ a {
   grid-template-areas: "header			header   	header" "categorias-productos-container	categorias-productos-container  categorias-productos-container" "categorias-productos-container	categorias-productos-container  categorias-productos-container" "footer	 		footer 		footer";
 }
 
+.carrito-container {
+  padding-top: 7%;
+  padding-left: 90%;
+  margin-bottom: 0%;
+}
+
 .categorias-productos-container {
   margin-top: 40px;
   grid-area: categorias-productos-container;
@@ -1168,6 +1174,79 @@ a {
   text-decoration: none;
   border: solid 1px black;
   color: black;
+}
+
+.btn-prod3 {
+  height: 40px;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  color: #686868;
+  border-color: solid 1px black;
+  background-color: white;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.btn-prod3:hover {
+  text-decoration: none;
+  color: #686868;
+}
+
+.cantidad-container {
+  height: 40px;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  color: black;
+  border-color: solid 1px black;
+  background-color: white;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.cant {
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  color: black;
+  border-color: solid 1px black;
+  background-color: white;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.cant:hover {
+  background-color: white;
+  text-decoration: none;
+  color: black;
+}
+
+.btn-cant {
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  color: black;
+  border-color: solid 1px black;
+  background-color: white;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.btn-cant:hover {
+  background-color: white;
+  text-decoration: none;
+  border: solid 1px black;
+  color: #6caf99;
 }
 
 .grid-container-productos {
