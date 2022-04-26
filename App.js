@@ -95,7 +95,7 @@ function generarCardsEnCarrito(carrito) {
                             <div class="cantidad-container">
                                 
                                 <a id= "cantidad-${bici.id}" class="btn-cant">-</a>
-                                <a  id="contadorCant" class="cant">  </a>
+                                <a  id="contadorCant" class="cant"> ${bici.cantidad} </a>
                                 <a onclick="aumentCant(${bici.id})"  class ="btn-cant">+ </a>
                                 
 
