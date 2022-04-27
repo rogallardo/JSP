@@ -20,9 +20,9 @@ class Bici{
 
 // Creo a cada uno de mis bicicletas.
 const bici1 = new Bici(1,"MTB Cube Attention 29'","Shimano Deore XT 30 3x9", 550000, 5);
-const bici2 = new Bici(2,"MTB Cube Aim 29'","Shimano Deore XT 20 2x10", 630000, 5);
-const bici3 = new Bici(3,"MTB Cube Reaction 29'","Shimano XTR 30 1x12", 750000, 5);
-const bici4 = new Bici(4,"MTB Cube Shadow 29'","Shimano Deore XT 30 3x9", 450000, 5);
+const bici2 = new Bici(2,"MTB Cube Aim 29'","Shimano Deore XT 20 2x10", 630000, 4);
+const bici3 = new Bici(3,"MTB Cube Reaction 29'","Shimano XTR 30 1x12", 750000, 3);
+const bici4 = new Bici(4,"MTB Cube Shadow 29'","Shimano Deore XT 30 3x9", 450000, 2);
 const bici5 = new Bici(5,"MTB Cube Action 29'", "Shimano XTR 30 1x12" , 500000,6);
 const bici6 = new Bici(6,"MTB Cube Slyer 29'", "Shimano XT 10 1x10" , 520000,6)
 // Mi array que va a contener las bicis.
@@ -56,7 +56,7 @@ function generadorDeCards(bicis) {
                             <a id= "agregarAlCarrito${bici.id}" class="btn-prod2">+ Agregar al carrito </a>
                         </div> 
                     </div>`
-        // Luego le agrego al div grandote que declaramos primero que este div va a ser su hijo!
+        // Luego le agrego al div grandote que declaramos primero que este div va a ser su hijo
         clase.append(contenedor)
         document.getElementById(`agregarAlCarrito${bici.id}`).addEventListener('click', () => {
             agregarAlCarrito(bici.id)
@@ -67,14 +67,6 @@ function generadorDeCards(bicis) {
         
     }
 }
-
-// Aca yo compro mi producto
-// 1- Declarar la funcion 
-// 2- Voy a verificar si mi produco existe ya previamente en el carrito
-// 3- Si existe solamente voy a aumentar la cantidad de mi producto
-// 4- Si no existe, voy a pushear por primera vez mi producto
-// 5- Una vez hecho todo el proceso, procedemos a calcular el total de los productos que contiene el carrito.
-// Esto lo hago recorriendo el array de carrito, revisando uno por uno mis productos y su respectiva cantidad.
 
 const mostrarCardsCarrito = (cards) => document.getElementById("carrito").innerHTML = cards;
 generarCardsEnCarrito(carrito)
@@ -94,28 +86,24 @@ function generarCardsEnCarrito(carrito) {
                             <h6>$${bici.precio}</h6>
                             <div class="cantidad-container">
                                 
-                                <a id= "cantidad-${bici.id}" class="btn-cant">-</a>
-                                <a  id="contadorCant" class="cant"> ${bici.cantidad} </a>
-                                <a onclick="aumentCant(${bici.id})"  class ="btn-cant">+ </a>
+                                <a onclick="dismCant(${bici.id})" id= "cantidad-${bici.id}" class="btn-cant">-</a>
                                 
-
+                                <a  id="contadorCant${bici.id}" class="cant"> ${bici.cantidad} </a>
+                                
+                                <a onclick="aumentCant(${bici.id})" id= "cantidad+${bici.id}" class ="btn-cant">+ </a>
+                                
                             
                             </div>
                             
                         </div>
                     </div>
                     </div>`
-     
- 
  }) 
   
     mostrarCardsCarrito(acumuladorDeCards)
 }
     
-function cantidadDelProducto (){
-    const cantTotalProducto = carrito.reduce((acc, producto) => (acc + producto.cantidad), 0)
-    document.getElementById('contadorCant').innerHTML= cantTotalProducto
-}    
+    
 
 function cantidadTotalCarrito (){  
     const totalProductos = carrito.reduce((acc, producto) => (acc + producto.cantidad), 0)
@@ -133,6 +121,15 @@ function datosCarrito() {
     
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//--------------------------------------------------- BOTONES ----------------------------------------------------------------------------------------//
+
 
 
 function agregarAlCarrito(idProducto){
@@ -167,20 +164,30 @@ function noHayStock() {
         button: "Ok",
       });
 }
-function aumentCant(idProducto){
-    
-             
+
+function aumentCant(idProducto){          
     const productoAAumentar= carrito.find(el => el.id === idProducto)
-    
     if(productoAAumentar.stock == 0){
         noHayStock()
         
     }else{
     productoAAumentar.cantidad++;
     productoAAumentar.stock--;
-    cantidadDelProducto()
+    document.getElementById(`contadorCant${idProducto}`).innerHTML = productoAAumentar.cantidad
+
     }
     datosCarrito()
-
+ 
 }
 
+function dismCant(idProducto){          
+    const productoADisminuir= carrito.find(el => el.id === idProducto)
+    if(productoADisminuir.cantidad > 1){
+    productoADisminuir.cantidad--;
+    productoADisminuir.stock++;
+    document.getElementById(`contadorCant${idProducto}`).innerHTML = productoADisminuir.cantidad
+
+    }
+    datosCarrito()
+ 
+}
