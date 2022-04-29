@@ -74,7 +74,7 @@
 
         <main class="categorias-productos-container">
             <div class="carrito-container">
-                <button type="button" class="btn btn-primary position-relative" data-bs-toggle="offcanvas"
+                <button type="button" class="btn btn-primary position-fixed" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     carrito
                     <span id="cantidad-carrito"
@@ -83,7 +83,7 @@
                 </button>
 
 
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                <div class="offcanvas offcanvas-end" style=position:fixed tabindex="-1" id="offcanvasRight"
                     aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
                         <h5 id="offcanvasRightLabel">Carrito de compra</h5>

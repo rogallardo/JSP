@@ -48,7 +48,7 @@
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     color: white;
-    border-color: solid 1px black;
+    border: solid 1px rgb(104, 104, 104);
     background-color: rgb(104, 104, 104);
     transition: 0.5s;
     display: flex;
@@ -63,6 +63,7 @@
         text-decoration: none;
         border: solid 1px black;
         color: rgb(0, 0, 0);
+        cursor:pointer;
     }
 
 }
@@ -71,7 +72,7 @@
     height: 40px;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
-    color: rgb(108, 175, 153);
+    color: rgb(108, 176, 153);
     border-color: solid 1px black;
     background-color: rgb(255, 255, 255);
     transition: 0.5s;
@@ -79,6 +80,8 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    box-shadow: 5px 0px 10px rgb(155, 155, 155);
+    ;
 
 
     &:hover {
@@ -86,6 +89,9 @@
         text-decoration: none;
         border: solid 1px black;
         color: rgb(0, 0, 0);
+        cursor:pointer;
+        box-shadow:none;
+    ;
     }
 
 }
@@ -143,19 +149,19 @@
     }
 
 }
-.btn-cant {
+.btn-cant1 {
     height: 40px;
     width: 40px;
     font-size: 20px;
-    font-family: 'Oswald', sans-serif;
     color: rgb(0, 0, 0);
-    border-color: solid 1px black;
     background-color: rgb(255, 255, 255);
-    transition: 0.5s;
+    border: solid 1px rgb(255, 255, 255);
+    transition: 0.9s;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    
 
 
     &:hover {
@@ -163,6 +169,33 @@
         text-decoration: none;
         border: solid 1px black;
         color: rgb(108, 175, 153);
+        cursor: pointer;
+        transform: translateX(-1px);
+    }
+
+}
+.btn-cant2 {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border: solid 1px rgb(255, 255, 255);
+    transition: 0.9s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    
+
+
+    &:hover {
+        background-color: rgb(255, 255, 255);
+        text-decoration: none;
+        border: solid 1px black;
+        color: rgb(108, 175, 153);
+        cursor: pointer;
+        transform: translateX(1px);
     }
 
 }
@@ -287,24 +320,99 @@
 
 
 .item-prod {
-    height: 550px;
+    height: fit-content;
     width: 350px;
     font-size: 60px;
     text-decoration: none;
-    box-shadow: 5px 0px 10px rgb(155, 155, 155);
-    
+    box-shadow: 5px 0px 10px rgb(155, 155, 155); 
     display: flex;
     flex-direction: column;
+    transition: 0.5s;
+    &:hover {
+        background-color: rgb(255, 255, 255);
+        text-decoration: none;
+        border: solid 1px rgb(108, 175, 153);
+        color: rgb(108, 175, 153);
+        box-shadow: 10px 10px 15px rgb(108, 175, 153);
+        // transform: translateX(-1px);
+    }
 
     .item-img-container {
-        height: 70%;
+        height: 60%;
         width: 100%;
         display: flex;
         flex-direction: column;
-        padding-top: 0%;
-
+        padding: 3%;
 
         .item-img{
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            display: flex;
+            
+        }
+
+    }
+    
+
+    .item-desc-container {
+        height: 40%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        // padding: 3%;
+
+
+        h4 {
+            font-size: 18px;
+            font-weight: lighter;
+            color: black;
+            text-align: center;
+            height: fit-content;
+        }
+
+        h5 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: black;
+            text-align: center;
+            height: fit-content;
+        }
+
+        h6 {
+            font-size: 18px;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+
+    }
+
+}
+.offcanvas-body{
+    display:flex;
+    padding:10%;
+   
+
+}
+.item-prod-carrito {
+    height: fit-content;
+    width: 300px;
+    font-size: 60px;
+    text-decoration: none;
+    box-shadow: 5px 0px 10px rgb(155, 155, 155);
+    display: flex;
+    flex-direction: column;
+    
+
+    .item-img-container-carrito {
+        height: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 3%;
+
+
+        .item-img-carrito{
             height: 100%;
             width: 100%;
             background-size: cover;
@@ -315,8 +423,8 @@
     }
     
 
-    .item-desc-container {
-        height: 30%;
+    .item-desc-container-carrito {
+        height: 100%;
         width: 100%;
         display: flex;
         flex-direction: column;

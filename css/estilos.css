@@ -1140,7 +1140,7 @@ a {
   font-size: 20px;
   font-family: "Oswald", sans-serif;
   color: white;
-  border-color: solid 1px black;
+  border: solid 1px #686868;
   background-color: #686868;
   transition: 0.5s;
   display: flex;
@@ -1154,13 +1154,14 @@ a {
   text-decoration: none;
   border: solid 1px black;
   color: black;
+  cursor: pointer;
 }
 
 .btn-prod2 {
   height: 40px;
   font-size: 20px;
   font-family: "Oswald", sans-serif;
-  color: #6caf99;
+  color: #6cb099;
   border-color: solid 1px black;
   background-color: white;
   transition: 0.5s;
@@ -1168,12 +1169,15 @@ a {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  box-shadow: 5px 0px 10px #9b9b9b;
 }
 .btn-prod2:hover {
   background-color: white;
   text-decoration: none;
   border: solid 1px black;
   color: black;
+  cursor: pointer;
+  box-shadow: none;
 }
 
 .btn-prod3 {
@@ -1228,25 +1232,48 @@ a {
   color: black;
 }
 
-.btn-cant {
+.btn-cant1 {
   height: 40px;
   width: 40px;
   font-size: 20px;
-  font-family: "Oswald", sans-serif;
   color: black;
-  border-color: solid 1px black;
   background-color: white;
-  transition: 0.5s;
+  border: solid 1px white;
+  transition: 0.9s;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
 }
-.btn-cant:hover {
+.btn-cant1:hover {
   background-color: white;
   text-decoration: none;
   border: solid 1px black;
   color: #6caf99;
+  cursor: pointer;
+  transform: translateX(-1px);
+}
+
+.btn-cant2 {
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  color: black;
+  background-color: white;
+  border: solid 1px white;
+  transition: 0.9s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.btn-cant2:hover {
+  background-color: white;
+  text-decoration: none;
+  border: solid 1px black;
+  color: #6caf99;
+  cursor: pointer;
+  transform: translateX(1px);
 }
 
 .grid-container-productos {
@@ -1350,34 +1377,40 @@ a {
 }
 
 .item-prod {
-  height: 550px;
+  height: fit-content;
   width: 350px;
   font-size: 60px;
   text-decoration: none;
   box-shadow: 5px 0px 10px #9b9b9b;
   display: flex;
   flex-direction: column;
+  transition: 0.5s;
+}
+.item-prod:hover {
+  background-color: white;
+  text-decoration: none;
+  border: solid 1px #6caf99;
+  color: #6caf99;
+  box-shadow: 10px 10px 15px #6caf99;
 }
 .item-prod .item-img-container {
-  height: 70%;
+  height: 60%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 0%;
+  padding: 3%;
 }
 .item-prod .item-img-container .item-img {
   height: 100%;
   width: 100%;
   background-size: cover;
   display: flex;
-  margin-top: 0%;
 }
 .item-prod .item-desc-container {
-  height: 30%;
+  height: 40%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 3%;
 }
 .item-prod .item-desc-container h4 {
   font-size: 18px;
@@ -1394,6 +1427,61 @@ a {
   height: fit-content;
 }
 .item-prod .item-desc-container h6 {
+  font-size: 18px;
+  color: black;
+  text-align: center;
+}
+
+.offcanvas-body {
+  display: flex;
+  padding: 10%;
+}
+
+.item-prod-carrito {
+  height: fit-content;
+  width: 300px;
+  font-size: 60px;
+  text-decoration: none;
+  box-shadow: 5px 0px 10px #9b9b9b;
+  display: flex;
+  flex-direction: column;
+}
+.item-prod-carrito .item-img-container-carrito {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+}
+.item-prod-carrito .item-img-container-carrito .item-img-carrito {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  display: flex;
+  margin-top: 0%;
+}
+.item-prod-carrito .item-desc-container-carrito {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+}
+.item-prod-carrito .item-desc-container-carrito h4 {
+  font-size: 18px;
+  font-weight: lighter;
+  color: black;
+  text-align: center;
+  height: fit-content;
+}
+.item-prod-carrito .item-desc-container-carrito h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  height: fit-content;
+}
+.item-prod-carrito .item-desc-container-carrito h6 {
   font-size: 18px;
   color: black;
   text-align: center;
