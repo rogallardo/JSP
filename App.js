@@ -67,7 +67,7 @@ function generarCardsEnCarrito(carrito) {
                         
                         <div id="MTB" class="item-prod-carrito ">
                             <div class="item-img-container-carrito">
-                            <img class= "item-img-carrito" src="/img/prod${bici.id}.jpg" class="card-img-top" alt=
+                            <img class= "item-img-carrito" src="../img/prod${bici.id}.jpg" alt= "fotos"
                             </div>
                             <div class="item-desc-container-carrito">
                                 <a onclick="eliminar(${bici.id})" class="btn-prod" >Eliminar</a>
