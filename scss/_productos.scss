@@ -461,35 +461,21 @@
 /* +++++++++++++++++++++++++++++++++++++++++   RESPONSIVE:  200-760px ++++++++++++++++++++++++++++++ */
 
 @media only screen and (min-width: 200px) and (max-width: 760px) {
-    .productos-container {
+    #productos-container {
 
         color: white;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr ;
         width: 100vw;
         grid-template-rows: auto;
         font-size: 18px;
         height: fit-content;
         gap: 20px;
         margin-bottom: 20px;
-        align-items: center;
         justify-content: center;
-        margin: auto;
-        padding: 2%;
+        padding-left: 10%;
+        padding-right: 10%;
         padding-top: 2%;
-        grid-template-areas:
-            'item-prod1'
-            'item-prod2'
-            'item-prod3'
-            'item-prod4'
-            'item-prod5'
-            'item-prod6'
-            'item-prod7'
-            'item-prod8'
-            'item-prod9'
-            'item-prod10'
-            'item-prod11'
-            'item-prod12';
     }
 
     .categorias-container {
@@ -538,17 +524,73 @@
 
     }
     .item-prod {
-        height: 500px;
-        width: 100%;
-        max-width: 500px;
-        min-width: 300;
+        height: fit-content;
+        width: 350px;
         font-size: 60px;
         text-decoration: none;
-        box-shadow: 5px 0px 10px rgb(155, 155, 155);
-        justify-content: center;
-        align-items: flex-start;
+        box-shadow: 5px 0px 10px rgb(155, 155, 155); 
         display: flex;
         flex-direction: column;
+        transition: 0.5s;
+        &:hover {
+            background-color: rgb(255, 255, 255);
+            text-decoration: none;
+            border: solid 1px rgb(108, 175, 153);
+            color: rgb(108, 175, 153);
+            box-shadow: 10px 10px 15px rgb(108, 175, 153);
+            // transform: translateX(-1px);
+        }
+    
+        .item-img-container {
+            height: 60%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 3%;
+    
+            .item-img{
+                height: 100%;
+                width: 100%;
+                background-size: cover;
+                display: flex;
+                
+            }
+    
+        }
+        
+    
+        .item-desc-container {
+            height: 40%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            // padding: 3%;
+    
+    
+            h4 {
+                font-size: 18px;
+                font-weight: lighter;
+                color: black;
+                text-align: center;
+                height: fit-content;
+            }
+    
+            h5 {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 16px;
+                color: black;
+                text-align: center;
+                height: fit-content;
+            }
+    
+            h6 {
+                font-size: 18px;
+                color: rgb(0, 0, 0);
+                text-align: center;
+            }
+    
+        }
+    
     }
     .space-intercat {
         width: 100vw;
@@ -560,28 +602,17 @@
 /* +++++++++++++++++++++++++++++++++++++++++   RESPONSIVE:  761-1023px ++++++++++++++++++++++++++++++ */
 
 @media only screen and (min-width: 761px) and (max-width: 1023px) {
-    .productos-container {
+    #productos-container {
 
         color: white;
         display: grid;
         grid-template-columns: 1fr 1fr;
         width: 100vw;
-        grid-template-rows: repeat(6, auto);
         font-size: 18px;
-        height: fit-content;
-        gap: 20px;
-        margin-bottom: 20px;
         align-items: center;
         justify-content: center;
-        margin: auto;
         padding-top: 2%;
-        grid-template-areas:
-            'item-prod1 item-prod2'
-            'item-prod3 item-prod4'
-            'item-prod5 item-prod6'
-            'item-prod7 item-prod8'
-            'item-prod9 item-prod10'
-            'item-prod11 item-prod12'
+ 
 
     }
 

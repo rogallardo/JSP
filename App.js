@@ -38,7 +38,7 @@ function generadorDeCards(bicis) {
     const clase= document.getElementById('productos-container')
     for(const bici of bicis){
         const contenedor = document.createElement('div')
-        contenedor.className='item-prod-container'
+        contenedor.className='productos-container'
         contenedor.innerHTML=`
                         <div id="MTB" class="item-prod ">
                         <div class="item-img-container">
