@@ -42,7 +42,7 @@ function generadorDeCards(bicis) {
         contenedor.innerHTML=`
                         <div id="MTB" class="item-prod ">
                         <div class="item-img-container">
-                            <img class= "item-img" src="/img/prod1.jpg" class="card-img-top" alt=
+                            <img class= "item-img" src="./img/prod1.jpg" class="card-img-top" alt=
                        
                         </div>
                         <div id= "item-desc-container" class="item-desc-container">
