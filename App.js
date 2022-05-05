@@ -7,33 +7,18 @@ class Bici{
         this.stock=stock;
         this.cantidad= cantidad || 0
     }
-    aumentarCantidad(){
-        this.cantidad++
-    }
-
-    disminuirCantidad(){
-        this.cantidad--
-
-    }
-
 }
-
-// Creo a cada uno de mis bicicletas.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//---------------------------------------------------PRODUCTOS----------------------------------------------------------------------------------------//
 const bici1 = new Bici(1,"MTB Cube Attention 29'","Shimano Deore XT 30 3x9", 550000, 5);
 const bici2 = new Bici(2,"MTB Cube Aim 29'","Shimano Deore XT 20 2x10", 630000, 4);
 const bici3 = new Bici(3,"MTB Cube Reaction 29'","Shimano XTR 30 1x12", 750000, 3);
 const bici4 = new Bici(4,"MTB Cube Shadow 29'","Shimano Deore XT 30 3x9", 450000, 2);
 const bici5 = new Bici(5,"MTB Cube Action 29'", "Shimano XTR 30 1x12" , 500000,6);
 const bici6 = new Bici(6,"MTB Cube Slyer 29'", "Shimano XT 10 1x10" , 520000,6)
-// Mi array que va a contener las bicis.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//---------------------------------------------PRODUCTOS EN PANTALLA----------------------------------------------------------------------------------------//
 const bicis =[bici1,bici2,bici3,bici4, bici5,bici6];
-const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-datosCarrito()
-
-
-
-generadorDeCards(bicis)
 function generadorDeCards(bicis) {
     const clase= document.getElementById('productos-container')
     for(const bici of bicis){
@@ -57,14 +42,16 @@ function generadorDeCards(bicis) {
     }
     
 }
-
-const mostrarCardsCarrito = (cards) => document.getElementById("carrito").innerHTML = cards;
+generadorDeCards(bicis)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//---------------------------------------------CARGA DE CARRITO----------------------------------------------------------------------------------------//
+const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+const mostrarCardsCarrito = (card) => document.getElementById("carrito").innerHTML = card;
 generarCardsEnCarrito(carrito)
 function generarCardsEnCarrito(carrito) {
     let acumuladorDeCards = ``
     carrito.forEach((bici) => {
         acumuladorDeCards +=`
-                        
                         <div id="MTB" class="item-prod-carrito ">
                             <div class="item-img-container-carrito">
                             <img class= "item-img-carrito" src="../img/prod${bici.id}.jpg" alt= "fotos"
@@ -81,27 +68,18 @@ function generarCardsEnCarrito(carrito) {
                                 </div>
                             </div>
                         </div>`
-
     btnAgregado (bici.id)    
  }) 
-  
-    mostrarCardsCarrito(acumuladorDeCards)
-    
-    
+    mostrarCardsCarrito(acumuladorDeCards)  
 }
-
-
-
 function cantidadTotalCarrito (){  
     const totalProductos = carrito.reduce((acc, producto) => (acc + producto.cantidad), 0)
     document.getElementById('cantidad-carrito').innerHTML = totalProductos
 }
-
 function precioTotal() {
     const precio = carrito.reduce((acc, biciEnCarrito) => ( acc + (biciEnCarrito.precio * biciEnCarrito.cantidad) ), 0)
     document.getElementById("preciototal").innerHTML= precio
 }
-
 function datosCarrito() {
     cantidadTotalCarrito()
     precioTotal()
@@ -109,11 +87,8 @@ function datosCarrito() {
     
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
-
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //--------------------------------------------------- BOTONES ----------------------------------------------------------------------------------------//
-
 function agregarAlCarrito(idProducto){
     const productoAgregado = bicis.find(el => el.id === idProducto)
     const productoEnCarrito = carrito.find(el => el.id === idProducto)
@@ -125,15 +100,6 @@ function agregarAlCarrito(idProducto){
     }
     datosCarrito()
 }
-
-
-function btnAgregado (idProducto) {
-    carrito.find(el => el.id === idProducto)
-    const btnAgregado = document.getElementById(`agregCarrito${idProducto}`);
-    btnAgregado.innerHTML =`Agregado`;
-    btnAgregado.className = `btn-prod3`
-    
-}
 function btnAgregarAlCarrito (idProducto) {
     carrito.find(el => el.id === idProducto)
     const btnAgregado = document.getElementById(`agregCarrito${idProducto}`);
@@ -141,7 +107,13 @@ function btnAgregarAlCarrito (idProducto) {
     btnAgregado.className = `btn-prod2`
     
 }
-
+function btnAgregado (idProducto) {
+    carrito.find(el => el.id === idProducto)
+    const btnAgregado = document.getElementById(`agregCarrito${idProducto}`);
+    btnAgregado.innerHTML =`Agregado`;
+    btnAgregado.className = `btn-prod3`
+    
+}
 function eliminar(idProducto){
     const productoAEliminar = carrito.find(el=> el.id === idProducto)
     let pos = carrito.indexOf(productoAEliminar)             
@@ -152,15 +124,6 @@ function eliminar(idProducto){
     datosCarrito()
     btnAgregarAlCarrito (idProducto)
 }
-
-function noHayStock() {
-    swal({
-        title: "No hay más Stock de este producto!",
-        icon: "warning",
-        button: "Ok",
-      });
-}
-
 function aumentCant(idProducto){          
     const productoAAumentar= carrito.find(el => el.id === idProducto)
     if(productoAAumentar.stock == 0){
@@ -185,4 +148,11 @@ function dismCant(idProducto){
     }
     datosCarrito()
  
+}
+function noHayStock() {
+    swal({
+        title: "No hay más Stock de este producto!",
+        icon: "warning",
+        button: "Ok",
+      });
 }
